@@ -1,0 +1,39 @@
+<idea-plugin version="2">
+    <id>com.jarvislau.plugin.modulefindviewbyid</id>
+    <name>FindViewById Plugin</name>
+    <version>1.0</version>
+    <vendor email="48235303qq.com" url="https://github.com/geniusliu"></vendor>
+
+    <description><![CDATA[
+      组件化开发ButterKnife支持不友好，此插件用于模块化开发时快速FindViewById<br>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      初步搭建生成findViewById<br>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="141.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="ModuleFindViewByIdAction" class="com.jarvis.findviews.FindViewsAction" text="Generate FindViews"
+                icon="/quick_find_views"
+                description="生成findViewById">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+        roup group-id="AnalyzeJavaMenu" anchor="first"/>
+    </actions>
+
+</idea-plugin>
