@@ -82,6 +82,7 @@ public class ClassDataWriter extends WriteCommandAction {
                 }
             }
         }
+        NotifyUtils.showInfo(psiFile.getProject(),"success");
     }
 
     private void appendFindViewsMethodBody(StringBuilder method, ResIdBean resIdBean) {

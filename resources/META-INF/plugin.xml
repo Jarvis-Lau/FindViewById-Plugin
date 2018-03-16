@@ -29,7 +29,7 @@
     <actions>
         <!-- Add your actions here -->
         <action id="ModuleFindViewByIdAction" class="com.jarvis.findviews.FindViewsAction" text="Generate FindViews"
-                icon="/quick_find_views"
+                icon="/quick_find_views.png"
                 description="生成findViewById">
             <add-to-group group-id="GenerateGroup" anchor="last"/>
         </action>

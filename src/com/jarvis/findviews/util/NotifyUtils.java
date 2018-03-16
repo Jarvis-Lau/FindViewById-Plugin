@@ -26,4 +26,8 @@ public class NotifyUtils {
         showNotification(project, MessageType.ERROR, msg);
     }
 
+    public static void showInfo(Project project, String msg) {
+        showNotification(project, MessageType.INFO, msg);
+    }
+
 }
