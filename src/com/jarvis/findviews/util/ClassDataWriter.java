@@ -62,11 +62,11 @@ public class ClassDataWriter extends WriteCommandAction {
             if (findViewsMethod == null) {
                 psiClass.add(psiElementFactory.createMethodFromText((methodBegin + methodEnd), psiClass));
             }
-            if (findViewsMethod != null) {
-                PsiCodeBlock body = findViewsMethod.getBody();
-                if (body != null && !body.getText().contains(resIdBean.getId())) {
-                    appendFindViewsMethodBody(method, resIdBean);
-                }
+            methods = psiClass.findMethodsByName("findViews", false);
+            findViewsMethod = methods[0];
+            PsiCodeBlock body = findViewsMethod.getBody();
+            if (body != null && !body.getText().contains(resIdBean.getId())) {
+                appendFindViewsMethodBody(method, resIdBean);
             }
         }
         if (method.length() != 0) {
@@ -82,7 +82,7 @@ public class ClassDataWriter extends WriteCommandAction {
                 }
             }
         }
-        NotifyUtils.showInfo(psiFile.getProject(),"success");
+        NotifyUtils.showInfo(psiFile.getProject(), "success");
     }
 
     private void appendFindViewsMethodBody(StringBuilder method, ResIdBean resIdBean) {
